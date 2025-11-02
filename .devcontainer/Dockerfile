@@ -4,6 +4,9 @@ ARG USERNAME=vscode
 ARG GROUPNAME=${USERNAME}
 ARG USER_UID=1000
 ARG USER_GID=${USER_UID}
+ARG TZ=Asia/Tokyo
+
+ENV TZ=${TZ}
 
 RUN apt-get update \
     && groupadd --gid ${USER_GID} ${GROUPNAME} \
@@ -51,3 +54,7 @@ ENV PATH="/home/vscode/.cargo/bin:${PATH}"
 
 # pahcerのインストール
 RUN cargo install pahcer
+
+# pahcerのアップデート
+RUN cargo install cargo-update
+RUN cargo install-update pahcer
