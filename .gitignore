@@ -1,4 +1,3 @@
 contest/*
-library/*
 !contest/.gitkeep
-!library/.gitkeep
+.DS_Store
